@@ -6,9 +6,12 @@ import axios from 'axios';
     https://api.github.com/users/<your name>
 */
 
-const axiosPromise = axios.get("https://api.github.com/users/sim-taa")
-                          .then(() => console.log("success!", r))
-console.log(axiosPromise);
+axios.get(`https://api.github.com/users/sim-taa`)
+   .then(resp => {
+      console.log(resp.data)
+      })
+    .catch(err => console.error(err));
+//console.log(axiosPromise);
 /*
   STEP 2: Inspect and study the data coming back, this is YOUR
     github info! You will need to understand the structure of this
@@ -33,7 +36,7 @@ console.log(axiosPromise);
     user, and adding that card to the DOM.
 */
 
-const followersArray = [];
+//const followersArray = [];
 
 /*
   STEP 3: Create a function that accepts a single object as its only argument.

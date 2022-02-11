@@ -7,6 +7,7 @@ import axios from 'axios';
 */
 
 const axiosPromise = axios.get("https://api.github.com/users/sim-taa")
+                          .then(() => console.log("success!", r))
 console.log(axiosPromise);
 /*
   STEP 2: Inspect and study the data coming back, this is YOUR
@@ -53,6 +54,38 @@ const followersArray = [];
       </div>
     </div>
 */
+
+function cardMaker({ imageURL, usersname, addressToUsersGithub}) {
+//in regards to the above, see line 15 of guided pjt for components 2. 
+//These keys refer pair to the info we will be displaying on the card.
+
+const userCard = document.createElement("div"); // <div class="card">
+const image = document.createElement("img"); // <img src={image url of user} />
+const cardInfo = document.createElement("div"); // <div class="card-info">
+const headingName = document.createElement("h3"); // <h3 class="name">{users name}</h3>
+const location = document.createElement("p"); // <p>Location: {users location}</p>
+const profile = document.createElement("a href") // <a href={address to users github page}>{address to users github page}</a>
+const followers = document.createElement("p") // <p>Followers: {users followers count}</p>
+const following = document.createElement("p") // <p>Followers: {users followers count}</p>
+const bio = document.createElement("p") // <p>Followers: {users followers count}</p>
+
+//creating the hierarchy 
+
+userCard.appendChild(image); //<div><img /></div>
+userCard.appendChild(cardInfo); //<div><img /><div></div></div>
+userCard.appendChild(headingName); // from here I don't know if it's right because it's not nested?
+userCard.appendChild(location);
+userCard.appendChild(profile);
+userCard.appendChild(followers);
+userCard.appendChild(following);
+userCard.appendChild(bio);
+}
+
+//setting text and image
+headingName.textContent = `Breed: ${breed}`;
+image.src = imageURL;
+
+
 
 /*
   List of LS Instructors Github username's:
